@@ -52,9 +52,20 @@ lines(ProcterGamble$Date, ProcterGamble$StockPrice, col="blue", lty=2)
 
 abline(v=as.Date(c("1983-03-01")), lwd=2)
 
+plot(CocaCola$Date[301:432], CocaCola$StockPrice[301:432], type="l", col="red", ylim=c(0,210),
+    main = "Stock Price 1995 - 2005")
 
+lines(IBM$Date[301:432], IBM$StockPrice[301:432], col="blue")
 
+lines(GE$Date[301:432], GE$StockPrice[301:432], col="green")
 
+lines(ProcterGamble$Date[301:432], ProcterGamble$StockPrice[301:432], col="orange")
+
+lines(Boeing$Date[301:432], Boeing$StockPrice[301:432], col="black")
+
+abline(v=as.Date(c("1997-9-01")), lwd=2)
+
+abline(v=as.Date(c("1997-9-01")), lwd=2)
 
 
 
