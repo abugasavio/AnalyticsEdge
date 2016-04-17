@@ -1,5 +1,5 @@
 
-This repo contains my code and notes for The Analytics Edge Class offered by MIT on EDX from 14th April 2016.
+This repo contains my code and notes for [The Analytics Edge Class](https://www.edx.org/course/analytics-edge-mitx-15-071x-2#!) offered by MIT on EDX from 14th April 2016.
 
 # The Analytics Edge
 
