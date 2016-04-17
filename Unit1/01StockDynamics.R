@@ -73,6 +73,14 @@ abline(v=as.Date(c("2005-12-31")), lwd=2)
 
 # Monthly Trends
 
+IBM$Month = months(IBM$Date)
+
+tapply(IBM$StockPrice, IBM$Month, mean)
+sort(tapply(GE$StockPrice, months(GE$Date), mean))
+sort(tapply(ProcterGamble$StockPrice, months(ProcterGamble$Date), mean))
+tapply(CocaCola$StockPrice, months(CocaCola$Date), mean)
+tapply(Boeing$StockPrice, months(Boeing$Date), mean)
+
 
 
 
