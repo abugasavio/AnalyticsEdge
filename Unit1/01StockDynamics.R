@@ -63,10 +63,15 @@ lines(ProcterGamble$Date[301:432], ProcterGamble$StockPrice[301:432], col="orang
 
 lines(Boeing$Date[301:432], Boeing$StockPrice[301:432], col="black")
 
-abline(v=as.Date(c("1997-9-01")), lwd=2)
+abline(v=as.Date(c("1997-9-01")))
 
-abline(v=as.Date(c("1997-9-01")), lwd=2)
+abline(v=as.Date(c("1997-11-01")))
 
+abline(v=as.Date(c("2004-01-01")), lwd=2)
+
+abline(v=as.Date(c("2005-12-31")), lwd=2)
+
+# Monthly Trends
 
 
 
