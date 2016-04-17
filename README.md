@@ -1,10 +1,15 @@
+
+This repo contains my code and notes for The Analytics Edge Class offered by MIT on EDX from 14th April 2016.
+
+# The Analytics Edge
+
+Through inspiring examples and stories, discover the power of data and use analytics to provide an edge to your career and your life.
+
 # Notes
 
-
 ### Important Notes
----
 
-#### Suggestion from past student
+#### [Suggestion from past student](https://courses.edx.org/courses/course-v1:MITx+15.071x_3+1T2016/discussion/forum/i4x-MITx-15.071x_2-course-1T2015/threads/570d0b84209a65053f000312)
 I've taken this course twice and enjoyed it immensely both times. I was a complete R newbie the first time and it was a mighty struggle but I learned a tremendous amount and am now able to get done in R what I need to get done (although I am far from an R expert).
 Here are some tips to making this a better learning experience.
 
