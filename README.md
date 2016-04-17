@@ -33,3 +33,19 @@ plot(CocaCola$Date, CocaCola$StockPrice, type="l", col="red")
 
 lines(ProcterGamble$Date, ProcterGamble$StockPrice, col="blue")
 ```
+
+Drawing a vertical line on a graph.
+```
+  abline(v=as.Date(c("2000-03-01")), lwd=2)
+```
+
+The above code will draw a vertical line on x-axis 2000-03-01 of width 2.
+
+To see available colors in R use the `colors()` command
+
+To use different line types use the argument `lty` in the `plot` method.
+
+- lty = 2: Dashed line
+- lty = 3: Dotted line
+- lty = 4: Alternate between dashes and dots
+- lty = 5: Long-dashed
