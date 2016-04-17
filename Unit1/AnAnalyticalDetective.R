@@ -1,7 +1,7 @@
 # Homework Assignment 1
 setwd("/Users/savioabuga/Documents/Study/AnalyticsEdge/")
 
-mvt = read.csv("Data/mvtWeek1.csv")
+mvt = read.csv("Unit1/Data/AnAnalyticalDetective/mvtWeek1.csv")
 
 str(mvt)
 
