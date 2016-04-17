@@ -5,8 +5,6 @@ This repo contains my code and notes for [The Analytics Edge Class](https://www.
 
 Through inspiring examples and stories, discover the power of data and use analytics to provide an edge to your career and your life.
 
-# Notes
-
 ### Important Notes
 
 #### [Suggestion from past student](https://courses.edx.org/courses/course-v1:MITx+15.071x_3+1T2016/discussion/forum/i4x-MITx-15.071x_2-course-1T2015/threads/570d0b84209a65053f000312)
@@ -25,3 +23,13 @@ But you can do it if you devote the time and effort!
 
 Best wishes on this exciting journey!
 Bill
+
+# Notes
+Combining graphs.
+The following code will produce two lines in one graph.
+
+```
+plot(CocaCola$Date, CocaCola$StockPrice, type="l", col="red")
+
+lines(ProcterGamble$Date, ProcterGamble$StockPrice, col="blue")
+```

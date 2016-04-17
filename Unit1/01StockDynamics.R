@@ -46,12 +46,11 @@ sd(ProcterGamble$StockPrice)
 ## Visualizing Stock Dynamics
 
 plot(CocaCola$Date, CocaCola$StockPrice, xlab = 'Date', ylab = 'Stock Price', 
-     main = 'CocaCola Stockprice from 1970 to 2009')
+     main = 'CocaCola Stockprice from 1970 to 2009', col='red', type="l")
 
+lines(ProcterGamble$Date, ProcterGamble$StockPrice, col="blue", lty=2)
 
-
-
-
+abline(v=as.Date(c("1983-03-01")), lwd=2)
 
 
 
