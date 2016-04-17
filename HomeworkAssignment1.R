@@ -92,8 +92,35 @@ Top5$LocationDescription
 
 tapply(Top5$Arrest, Top5$LocationDescription, summary)
 # Rate of Arrest
-# 
+# ALLEY
+# 249/(249+2059) = 0.1078856153
+# DRIVEWAY - RESIDENTIAL
+# 132/(132+1543) = 0.07880597015
+# GAS STATION
+# 439/(439+1672) = 0.2079583136
+# PARKING LOT/GARAGE(NON.RESID.)
+# 1603/(1603+13249) = 0.1079315917
+# STREET
+# 11595/(11595 + 144969) = 0.07405917069
 
+# On which day of the week do the fewest motor vehicle thefts in residential driveways happen
 
+GasStationMonday = subset(GasStation, Weekday == "Monday")
+GasStationTuesday = subset(GasStation, Weekday == "Tuesday")
+GasStationWednesdays = subset(GasStation, Weekday == "Wednesday")
+GasStationThursday = subset(GasStation, Weekday == "Thursday")
+GasStationFriday = subset(GasStation, Weekday == "Friday")
+GasStationSaturday = subset(GasStation, Weekday == "Saturday")
+GasStationSunday = subset(GasStation, Weekday == "Sunday")
+
+# On which day of the week do the most motor vehicle thefts at gas stations happen?
+
+DrivewayMonday = subset(Driveway, Weekday == "Monday")
+DrivewayTuesday = subset(Driveway, Weekday == "Tuesday")
+DrivewayWednesdays = subset(Driveway, Weekday == "Wednesday")
+DrivewayThursday = subset(Driveway, Weekday == "Thursday")
+DrivewayFriday = subset(Driveway, Weekday == "Friday")
+DrivewaySaturday = subset(Driveway, Weekday == "Saturday")
+DrivewaySunday = subset(Driveway, Weekday == "Sunday")
 
 
