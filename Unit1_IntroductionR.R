@@ -50,7 +50,7 @@ AllCountryData
 # VIDEO 4
 
 # Loading csv files
-WHO = read.csv("WHO.csv")
+WHO = read.csv("Data/WHO.csv")
 str(WHO)
 summary(WHO)
 
