@@ -6,7 +6,7 @@ setwd("/Users/savioabuga/Documents/Study/AnalyticsEdge/")
 # Get the current directory
   getwd()
 # Read the csv file
-  USDA = read.csv("Data/USDA.csv")
+  USDA = read.csv("Unit1/Data/USDA.csv")
 # Structure of the dataset
   str(USDA)
 # Statistical summary

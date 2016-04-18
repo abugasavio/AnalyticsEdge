@@ -21,3 +21,14 @@ str(CPS)
 table(CPS[CPS$Hispanic==1, c("Race")])
 
 summary(CPS)
+
+# Working with Missing data
+table(CPS$Age, is.na(CPS$Married))
+
+table(CPS$State, is.na(CPS$MetroAreaCode))
+
+prop.table(table(CPS$State, is.na(CPS$MetroAreaCode)), 1)
+
+# mean
+tapply(CPS$State, is.na(CPS$MetroAreaCode), mean, na.rm = TRUE)
+    
