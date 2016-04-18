@@ -49,3 +49,61 @@ To use different line types use the argument `lty` in the `plot` method.
 - lty = 3: Dotted line
 - lty = 4: Alternate between dashes and dots
 - lty = 5: Long-dashed
+
+## Frequency tables
+
+How many cars from the R built-in dataset mtcars have 4 gears?
+
+```
+> CarGears = table(mtcars$gear)
+> CarGears
+```
+
+ 3  4  5\
+15 12  5
+
+How do I access the number of cars using variables?
+
+1. Convert the `table` to `dataframe`
+    ```
+    > CarGears = as.data.frame(CarGears)
+    > CarGears
+    ```
+
+    &nbsp;&nbsp;Var1 Freq\
+    1    3   15\
+    2    4   12\
+    3    5    5
+
+2. Change the name `Var1` to `Gear`
+    names(CarGears)[1] = 'Gear'
+    ```
+    CarGears
+    ```
+
+&nbsp;&nbsp;   Gear Freq\
+1    3   15\
+2    4   12\
+3    5    5
+
+3. Now you can access the frequency using variables:
+  ```
+  ThreeGears = CarGears[CarGears$Gear=="3", c("Freq")]
+  FourGears = CarGears[CarGears$Gear=="4", c("Freq")]
+  FiveGears = CarGears[CarGears$Gear=="5", c("Freq")]
+  ```
+
+You can also use `count()` from [plyr](https://cran.r-project.org/web/packages/plyr/plyr.pdf)
+
+`install.packages('plyr')`
+
+`library(plyr)`
+
+ Count of gears:
+
+`count(mtcars, vars = "gear")`
+
+&nbsp;&nbsp;gear freq\
+1    3   15\
+2    4   12\
+3    5    5
