@@ -16,3 +16,8 @@ sort(table(CPS$Industry))
 sort(table(CPS$State)) 
 
 prop.table(table(CPS$Citizenship))["Citizen, Native"] + prop.table(table(CPS$Citizenship))["Citizen, Naturalized"]
+
+str(CPS)
+table(CPS[CPS$Hispanic==1, c("Race")])
+
+summary(CPS)
