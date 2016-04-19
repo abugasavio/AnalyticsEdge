@@ -50,7 +50,7 @@ To use different line types use the argument `lty` in the `plot` method.
 - lty = 4: Alternate between dashes and dots
 - lty = 5: Long-dashed
 
-## (Using `tapply()` to get proportions)[https://courses.edx.org/courses/course-v1:MITx+15.071x_3+1T2016/discussion/forum/78e20dc705de4a87986c2bcd1321b23a/threads/5712a71bdb70a905a80000e7]
+## [Using `tapply()` to get proportions](https://courses.edx.org/courses/course-v1:MITx+15.071x_3+1T2016/discussion/forum/78e20dc705de4a87986c2bcd1321b23a/threads/5712a71bdb70a905a80000e7)
 
 
 Here `tapply()` takes three parameters.
