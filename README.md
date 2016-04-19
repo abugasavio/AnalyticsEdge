@@ -50,6 +50,17 @@ To use different line types use the argument `lty` in the `plot` method.
 - lty = 4: Alternate between dashes and dots
 - lty = 5: Long-dashed
 
+## (Using `tapply()` to get proportions)[https://courses.edx.org/courses/course-v1:MITx+15.071x_3+1T2016/discussion/forum/78e20dc705de4a87986c2bcd1321b23a/threads/5712a71bdb70a905a80000e7]
+
+
+Here `tapply()` takes three parameters.
+The (the 3rd parameter in tapply) is applied to the first parameter of tapply
+(the argument of the function).
+The second parameter of tapply provides the grouping/categorization.
+So in order to calculate a proportion with tapply and the mean function as 3rd parameter,
+the 1st parameter must be a boolean (0 or 1), for instance the result of a comparison.
+
+
 ## Frequency tables
 
 How many cars from the R built-in dataset mtcars have 4 gears?
@@ -107,3 +118,22 @@ You can also use `count()` from [plyr](https://cran.r-project.org/web/packages/p
 1    3   15\
 2    4   12\
 3    5    5
+
+## Merging tables
+
+To merge data frames horizontally use the `merge()` function.
+
+```
+  # merging two data frames by MetroAreaCode
+  CPS = merge(CPS, MetroAreaMap, by.x="MetroAreaCode", by.y="Code", all.x=TRUE)
+```
+
+The first two arguments determine the data frames to be merged (they are called
+"x" and "y", respectively, in the subsequent parameters to the merge function).
+by.x="MetroAreaCode" means we're matching on the MetroAreaCode variable from the
+"x" data frame (CPS), while by.y="Code" means we're matching on the Code variable
+from the "y" data frame (MetroAreaMap). Finally, all.x=TRUE means we want to keep
+all rows from the "x" data frame (CPS), even if some of the rows' MetroAreaCode
+doesn't match any codes in MetroAreaMap (for those familiar with database
+terminology, this parameter makes the operation a left outer join
+instead of an inner join).

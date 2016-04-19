@@ -30,5 +30,27 @@ table(CPS$State, is.na(CPS$MetroAreaCode))
 prop.table(table(CPS$State, is.na(CPS$MetroAreaCode)), 1)
 
 # mean
-tapply(CPS$State, is.na(CPS$MetroAreaCode), mean, na.rm = TRUE)
-    
+is.na(CPS$MetroAreaCode)
+
+tapply(is.na(CPS$MetroAreaCode), CPS$State, mean)
+
+# Integrating Metropolitan Area Data
+
+MetroAreaMap = read.csv("Unit1/Data/Demographics/MetroAreaCodes.csv")
+str(MetroAreaMap)
+
+CountryMap = read.csv("Unit1/Data/Demographics/CountryCodes.csv")
+str(CountryMap)
+
+CPS = merge(CPS, MetroAreaMap, by.x="MetroAreaCode", by.y="Code", all.x=TRUE)
+
+str(CPS)
+
+MissingMetroAreas = CPS[is.na(CPS$MetroArea)==TRUE, ]
+
+nrow(MissingMetroAreas)
+
+NonMissingMetroAreas = CPS[is.na(CPS$MetroArea)==FALSE, ]
+
+fre = as.data.frame(table(NonMissingMetroAreas$MetroArea))
+fre[order(Freq),]
