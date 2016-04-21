@@ -34,6 +34,7 @@ SSE
 # Linear Regression using HarvestRain and WinterRain
 model6 = lm(Price ~ HarvestRain + WinterRain, data=wine)
 summary(model6)
+cor(wine$HarvestRain, wine$WinterRain)
 
 # VIDEO 5
 
@@ -57,7 +58,7 @@ summary(model5)
 # VIDEO 7
 
 # Read in test set
-wineTest = read.csv("wine_test.csv")
+wineTest = read.csv("Unit2/Data/wine_test.csv")
 str(wineTest)
 
 # Make test set predictions
