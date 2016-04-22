@@ -1,0 +1,28 @@
+---
+title: "Unit 2 Notes"
+output: html_document
+---
+
+Using Linear Regression
+---
+```{r echo=FALSE}
+setwd("/Users/savioabuga/Documents/Study/AnalyticsEdge/")
+```
+
+```{r}
+WineTraining = read.csv("Data/wine.csv")
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(Price ~ AGST, data = WineTraining, xlab="Average Growing Season Temp(Celsius", ylab="Logarithm of Price", 
+lty="solid")
+abline(h =mean((WineTraining$Price)), lwd=2, col="red")
+
+
+```
+
+Measures of Error
+---
+**SSE** :  
