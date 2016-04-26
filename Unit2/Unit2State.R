@@ -35,14 +35,14 @@ cor(statedata$Income, statedata$Life.Exp)
 # Model without Area
 # Area has the highest P Value
 
-Model1 = lm(Life.Exp ~ Population + Income + Illiteracy + Murder + HS.Grad + Frost, data = statedata)
+Model2 = lm(Life.Exp ~ Population + Income + Illiteracy + Murder + HS.Grad + Frost, data = statedata)
 
 summary(Model1)
 
 # Model without Illiteracy
 # Illiteracy has the 2nd highest P Value
 
-Model1 = lm(Life.Exp ~ Population + Income + Murder + HS.Grad + Frost, data = statedata)
+Model3 = lm(Life.Exp ~ Population + Income + Murder + HS.Grad + Frost, data = statedata)
 
 summary(Model1)
 
@@ -50,8 +50,19 @@ summary(Model1)
 # Model without Income
 # Income has the 3rd highest P Value
 
-Model1 = lm(Life.Exp ~ Population + Frost + Murder + HS.Grad, data = statedata)
+Model4 = lm(Life.Exp ~ Population + Frost + Murder + HS.Grad, data = statedata)
 
 summary(Model1)
 
+# Using the model
+statedata$predictions = predict(Model4)
+statedata$state.name[which.min(statedata$predictions)]
+statedata$state.name[which.min(statedata$Life.Exp)]
 
+
+statedata$state.name[which.max(statedata$predictions)]
+statedata$state.name[which.max(statedata$Life.Exp)]
+
+statedata$residuals = abs(statedata$predictions - statedata$Life.Exp)
+statedata$state.name[which.min(statedata$residuals)]
+statedata$state.name[which.max(statedata$residuals)]
