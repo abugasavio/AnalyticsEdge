@@ -21,6 +21,28 @@ table(songs$timesignature)
 songs$songtitle[which.max(songs$tempo)]
 
 # creating a logistic regression model
-SongsTrain = subset(songs, year <= 2009)
-SongsTest = subset(songs, year == 2010)
+nonvars = c("year", "songtitle", "artistname", "songID", "artistID")
 
+SongsTrain = subset(songs, year <= 2009)
+# remove non vars columns
+SongsTrain = SongsTrain[, !names(SongsTrain) %in% nonvars]
+SongsTest = subset(songs, year == 2010)
+# remove non vars columns
+SongsTest = SongsTest[, !names(SongsTest) %in% nonvars]
+# the model
+SongsLog1 = glm(Top10 ~ ., data = SongsTrain, family = binomial)
+summary(SongsLog1)
+# Beware of multicoliearity
+cor(SongsTrain$loudness, SongsTrain$energy)
+
+SongsLog2 = glm(Top10 ~ . - loudness, data = SongsTrain, family = binomial)
+summary(SongsLog2)
+
+
+SongsLog3 = glm(Top10 ~ . - energy, data = SongsTrain, family = binomial)
+summary(SongsLog3)
+
+predictions = predict(SongsLog3, newdata = SongsTest, type="response")
+predictions
+table(SongsTest$Top10)
+table(SongsTest$Top10, predictions > 0.45)

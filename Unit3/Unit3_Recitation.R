@@ -58,7 +58,7 @@ table(Train$Republican, pred1 >= 0.5)
 # Two-variable model
 mod2 = glm(Republican~SurveyUSA+DiffCount, data=Train, family="binomial")
 pred2 = predict(mod2, type="response")
-table(Train$Republican, pred2 >= 0.5)
+table(Train$Republican, pred2>= 0.5)
 summary(mod2)
 
 
