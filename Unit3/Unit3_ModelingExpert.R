@@ -39,8 +39,11 @@ predictTrain = predict(QualityLog, type="response")
 summary(predictTrain)
 tapply(predictTrain, qualityTrain$PoorCare, mean)
 
-
-
+predictTest = predict(QualityLog, type = "response", newdata = qualityTest)
+ROCRpredTest = prediction(predictTest, qualityTest$PoorCare)
+ROCRpredTest
+auc = as.numeric(performance(ROCRpredTest, "auc")@y.values)
+auc
 # Video 5
 
 # Confusion matrix for threshold of 0.5
@@ -86,3 +89,4 @@ plot(ROCRperf, colorize=TRUE)
 
 # Add threshold labels 
 plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))
+
